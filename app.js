@@ -10,6 +10,7 @@ let mobile_burger = document.querySelector('.mobile_burger_button');
 let mobile_menu = document.querySelector('.mobile_menu');
 let mobile_menu_header = document.querySelector('.mobile_menu_header');
 let mobile_menu_main_part = document.querySelector('.main_part');
+let container = document.querySelectorAll('.container');
 
 header_navigation.addEventListener('mouseover', (event)=>{
     if(event.target==header_navigation.children[2]){
@@ -86,5 +87,13 @@ mobile_menu_header.addEventListener('click', (event)=>{
    }
 });
 
+for(let i=0; i<container.length;i++){
+    container[i].addEventListener('click',(event)=>{
+        if(event.target.parentElement!=mobile_burger){
+            event.preventDefault();
+            mobile_menu.style.display="none";
+        }
+    });
+}
 
 
